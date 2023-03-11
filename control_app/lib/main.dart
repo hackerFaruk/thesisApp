@@ -10,8 +10,8 @@ void main() {
       ),
       body: const Center(
         child: Image(
-          image: NetworkImage(
-              'https://www.tutorialkart.com/wp-content/uploads/2021/11/flutter-scaffold-iphone-1.png'),
+          image: AssetImage(
+              'images/rotate.png'),
         ),
       ),
     
