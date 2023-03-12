@@ -27,6 +27,7 @@ class ControlButtons extends StatefulWidget {
 
 class _ControlButtonsState extends State<ControlButtons> {
   String toolTip = "Press Buttons To Rotate";
+  String baseIcon = 'images/rotateBack.png';
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +36,11 @@ class _ControlButtonsState extends State<ControlButtons> {
         child: Column(
           children: [
             GestureDetector(
-              child:  Text(' $toolTip'),
+              child: Text(' $toolTip'),
               onTap: () => print('i am a gesture detector'),
               behavior: HitTestBehavior.translucent,
             ), // gesturedetector has a weird use you need behaviour
-      
+
             Row(
               children: [
                 ElevatedButton(
@@ -57,21 +58,22 @@ class _ControlButtonsState extends State<ControlButtons> {
                         toolTip = "Flexing Arm";
                       });
                     },
-                    child:
-                        const Image(image: AssetImage('images/rotateBack.png'))),
-                 const  CoolButton(icon: 'images/rotate.png' ),
-                
+                    child: const Image(
+                        image: AssetImage('images/rotateBack.png'))),
+                const CoolButton(icon: 'images/rotate.png'),
               ],
             ),
-             const GestureControls(),
-             ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        toolTip = "Flexing Arm";
-                      });
-                    },
-                    child:
-                        const Image(image: AssetImage('images/rotateBack.png'))),
+            const GestureControls(),
+            GestureDetector(
+               onDoubleTap: () {
+                  setState(() {
+                 toolTip = "wrongbutton";
+                 baseIcon = 'images/rotateBack.png';
+                 print('tapped but no state change');
+               });
+               },
+              child:  CoolButton(icon:'$baseIcon'),
+             ),
           ],
         ),
       ),
@@ -81,9 +83,8 @@ class _ControlButtonsState extends State<ControlButtons> {
 
 class CoolButton extends StatefulWidget {
   final String icon;
-  
 
-  const CoolButton({this.icon = "",   super.key});
+  const CoolButton({this.icon = "", super.key});
 
   @override
   State<CoolButton> createState() => _CoolButtonState();
@@ -126,7 +127,8 @@ class _GestureControlsState extends State<GestureControls> {
         height: 100.0,
         color: Colors.orange,
         child: Text('$currentGesture'),
-      ), onTap: () => setState(() {
+      ),
+      onTap: () => setState(() {
         currentGesture = "You tapped me";
       }),
     );
