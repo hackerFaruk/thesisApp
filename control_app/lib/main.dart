@@ -32,7 +32,11 @@ class _ControlButtonsState extends State<ControlButtons> {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        children: const [Text('Control Buttons')],
+        children:  [
+           const Text('Control Buttons '),
+          Row( children: [ElevatedButton(onPressed: () { print('pressed'); },
+          child: const Image( image: AssetImage('images/rotate.png'),))],)
+          ],
       ),
     );
   }
