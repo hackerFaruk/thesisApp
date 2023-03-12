@@ -19,3 +19,21 @@ void main() {
     ),
   ));
 }
+
+class ControlButtons extends StatefulWidget {
+  const ControlButtons({super.key});
+
+  @override
+  State<ControlButtons> createState() => _ControlButtonsState();
+}
+
+class _ControlButtonsState extends State<ControlButtons> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: const [Text('Control Buttons')],
+      ),
+    );
+  }
+}
