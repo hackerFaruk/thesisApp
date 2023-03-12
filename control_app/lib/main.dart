@@ -54,7 +54,10 @@ class _ControlButtonsState extends State<ControlButtons> {
                   child:
                       const Image(image: AssetImage('images/rotateBack.png'))),
               
-              const CoolButton( icon: 'images/rotate.png'),
+              GestureDetector( child: const CoolButton( icon: 'images/rotate.png'),
+              onTap: () {
+                print('i am a gesture detector');
+              },),
             
             ],
           )
