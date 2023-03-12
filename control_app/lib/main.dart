@@ -34,8 +34,13 @@ class _ControlButtonsState extends State<ControlButtons> {
       child: Column(
         children:  [
            const Text('Control Buttons '),
-          Row( children: [ElevatedButton(onPressed: () { print('pressed'); },
-          child: const Image( image: AssetImage('images/rotate.png'),))],)
+          Row( children: [
+            ElevatedButton(onPressed: () { print('pressed'); },
+              child: const Image( image: AssetImage('images/rotate.png'),)), 
+          ElevatedButton(onPressed:() {print('pressed reverse');}, 
+              child:  const Image( image: AssetImage('images/rotateBack.png')))],
+          
+          )
           ],
       ),
     );
