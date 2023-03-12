@@ -26,44 +26,54 @@ class ControlButtons extends StatefulWidget {
 }
 
 class _ControlButtonsState extends State<ControlButtons> {
-  var toolTip = "Press Buttons To Rotate";
+  String toolTip = "Press Buttons To Rotate";
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: [
-          GestureDetector(
-            child:  Text(' $toolTip'),
-            onTap: () => print('i am a gesture detector'),
-            behavior: HitTestBehavior.translucent,
-          ), // gesturedetector has a weird use you need behaviour
-
-          Row(
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      toolTip = "Extending Arm";
-                    });
-                  },
-                  child: const Image(
-                    image: AssetImage('images/rotate.png'),
-                  )),
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      toolTip = "Flexing Arm";
-                    });
-                  },
-                  child:
-                      const Image(image: AssetImage('images/rotateBack.png'))),
-              const CoolButton(icon: 'images/rotate.png'),
-              
-            ],
-          ),
-           const GestureControls(),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            GestureDetector(
+              child:  Text(' $toolTip'),
+              onTap: () => print('i am a gesture detector'),
+              behavior: HitTestBehavior.translucent,
+            ), // gesturedetector has a weird use you need behaviour
+      
+            Row(
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        toolTip = "Extending Arm";
+                      });
+                    },
+                    child: const Image(
+                      image: AssetImage('images/rotate.png'),
+                    )),
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        toolTip = "Flexing Arm";
+                      });
+                    },
+                    child:
+                        const Image(image: AssetImage('images/rotateBack.png'))),
+                 const  CoolButton(icon: 'images/rotate.png' ),
+                
+              ],
+            ),
+             const GestureControls(),
+             ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        toolTip = "Flexing Arm";
+                      });
+                    },
+                    child:
+                        const Image(image: AssetImage('images/rotateBack.png'))),
+          ],
+        ),
       ),
     );
   }
@@ -71,8 +81,9 @@ class _ControlButtonsState extends State<ControlButtons> {
 
 class CoolButton extends StatefulWidget {
   final String icon;
+  
 
-  const CoolButton({this.icon = "", super.key});
+  const CoolButton({this.icon = "",   super.key});
 
   @override
   State<CoolButton> createState() => _CoolButtonState();
