@@ -9,10 +9,7 @@ void main() {
         backgroundColor: const Color.fromARGB(255, 32, 197, 216),
       ),
       body: const Center(
-        child: Image(
-          image: AssetImage(
-              'images/rotate.png'),
-        ),
+        child: ControlButtons()
       ),
     
     
