@@ -22,14 +22,15 @@ class ControlButtons extends StatefulWidget {
 
 class _ControlButtonsState extends State<ControlButtons> {
 
-String toolTip = "Press Buttons To Rotate";
+var toolTip = "Press Buttons To Rotate";
 
   @override
   Widget build(BuildContext context) {
+   
     return Center(
       child: Column(
         children: [
-          const Text('Control Buttons '),
+           Text(' $toolTip'),
           Row(
             children: [
               ElevatedButton(
