@@ -31,27 +31,38 @@ class _ControlButtonsState extends State<ControlButtons> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Center(
       child: SingleChildScrollView(
         child: Column(
           children: [
             GestureDetector(
-              child: Text(' $toolTip'),
               onTap: () => print('i am a gesture detector'),
               behavior: HitTestBehavior.translucent,
+              child: Text(' $toolTip'),
             ), // gesturedetector has a weird use you need behaviour
 
             Row(
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        toolTip = "Extending Arm";
-                      });
-                    },
-                    child: const Image(
-                      image: AssetImage('images/rotate.png'),
-                    )),
+                Container(
+                  //responsive size with constrains
+                  constraints: const BoxConstraints(
+                      minHeight: 100,
+                      minWidth: 100,
+                      maxHeight: 300,
+                      maxWidth: 300),
+                  width: screenWidth / 10,
+                  height: screenWidth / 10,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          toolTip = "Extending Arm";
+                        });
+                      },
+                      child: const Image(
+                        image: AssetImage('images/rotate.png'),
+                      )),
+                ),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
