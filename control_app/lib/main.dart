@@ -178,8 +178,8 @@ class _BluetoothPageState extends State<BluetoothPage> {
           ),
           body: Center(
             child: SizedBox(
-                width: pageSize.width,
-                height: pageSize.height / 2,
+                width: pageSize.width / 3,
+                height: pageSize.height / 5,
                 child: ElevatedButton(
                   onPressed: () {
                     // Go back to main
