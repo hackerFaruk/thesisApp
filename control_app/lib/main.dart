@@ -82,20 +82,19 @@ class _ControlButtonsState extends State<ControlButtons> {
                       child: const Image(
                           image: AssetImage('images/rotateBack.png'))),
                 ),
-                const CoolButton(icon: 'images/rotate.png'),
               ],
             ),
             const GestureControls(),
-            GestureDetector(
-              onDoubleTap: () {
-                setState(() {
-                  toolTip = "wrongbutton";
-                  baseIcon = 'images/rotateBack.png';
-                  print('tapped but no state change');
-                });
-              },
-              child: CoolButton(icon: baseIcon),
-            ),
+            const CoolButton(icon: 'images/bt.png'),
+            ElevatedButton(
+                onPressed: () {
+                  // change to page bluetoothPage
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BluetoothPage()));
+
+                  print('er');
+                },
+                child: Text('PAge')),
           ],
         ),
       ),
@@ -183,7 +182,10 @@ class _BluetoothPageState extends State<BluetoothPage> {
                 height: pageSize.height / 2,
                 child: ElevatedButton(
                   onPressed: () {
-                    // put back to here
+                    // Go back to main
+
+                    Navigator.pop(context);
+
                     print('change page');
                   },
                   style:
