@@ -31,6 +31,7 @@ class _ControlButtonsState extends State<ControlButtons> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Center(
       child: SingleChildScrollView(
         child: Column(
@@ -43,15 +44,25 @@ class _ControlButtonsState extends State<ControlButtons> {
 
             Row(
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        toolTip = "Extending Arm";
-                      });
-                    },
-                    child: const Image(
-                      image: AssetImage('images/rotate.png'),
-                    )),
+                Container(
+                  //responsive size with constrains
+                  constraints: const BoxConstraints(
+                      minHeight: 100,
+                      minWidth: 100,
+                      maxHeight: 300,
+                      maxWidth: 300),
+                  width: screenWidth / 10,
+                  height: screenWidth / 10,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          toolTip = "Extending Arm";
+                        });
+                      },
+                      child: const Image(
+                        image: AssetImage('images/rotate.png'),
+                      )),
+                ),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -72,7 +83,7 @@ class _ControlButtonsState extends State<ControlButtons> {
                   print('tapped but no state change');
                 });
               },
-              child: CoolButton(icon: baseIcon),
+              child: CoolButton(icon: '$baseIcon'),
             ),
           ],
         ),
@@ -121,12 +132,15 @@ class _GestureControlsState extends State<GestureControls> {
 
   @override
   Widget build(BuildContext context) {
+    // responsive için ekran boyu alma
+    final currentWidth = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       child: Container(
         width: 100.0,
         height: 100.0,
         color: Colors.orange,
-        child: Text(currentGesture),
+        child: Text('$currentGesture'),
       ),
       onTap: () => setState(() {
         currentGesture = "You tapped me";
