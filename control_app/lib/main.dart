@@ -36,9 +36,9 @@ class _ControlButtonsState extends State<ControlButtons> {
         child: Column(
           children: [
             GestureDetector(
-              child: Text(' $toolTip'),
               onTap: () => print('i am a gesture detector'),
               behavior: HitTestBehavior.translucent,
+              child: Text(' $toolTip'),
             ), // gesturedetector has a weird use you need behaviour
 
             Row(
@@ -65,15 +65,15 @@ class _ControlButtonsState extends State<ControlButtons> {
             ),
             const GestureControls(),
             GestureDetector(
-               onDoubleTap: () {
-                  setState(() {
-                 toolTip = "wrongbutton";
-                 baseIcon = 'images/rotateBack.png';
-                 print('tapped but no state change');
-               });
-               },
-              child:  CoolButton(icon:'$baseIcon'),
-             ),
+              onDoubleTap: () {
+                setState(() {
+                  toolTip = "wrongbutton";
+                  baseIcon = 'images/rotateBack.png';
+                  print('tapped but no state change');
+                });
+              },
+              child: CoolButton(icon: baseIcon),
+            ),
           ],
         ),
       ),
@@ -126,11 +126,46 @@ class _GestureControlsState extends State<GestureControls> {
         width: 100.0,
         height: 100.0,
         color: Colors.orange,
-        child: Text('$currentGesture'),
+        child: Text(currentGesture),
       ),
       onTap: () => setState(() {
         currentGesture = "You tapped me";
       }),
+    );
+  }
+}
+
+class BluetoothPage extends StatefulWidget {
+  const BluetoothPage({super.key});
+
+  @override
+  State<BluetoothPage> createState() => _BluetoothPageState();
+}
+
+class _BluetoothPageState extends State<BluetoothPage> {
+  @override
+  Widget build(BuildContext context) {
+    final pageSize = MediaQuery.of(context).size;
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Bluetooth Page'),
+            backgroundColor: Colors.blueGrey,
+          ),
+          body: Center(
+            child: SizedBox(
+                width: pageSize.width,
+                height: pageSize.height / 2,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // put back to here
+                    print('change page');
+                  },
+                  style:
+                      ElevatedButton.styleFrom(fixedSize: const Size(150, 50)),
+                  child: const Text('Change Pages now'),
+                )),
+          )),
     );
   }
 }
