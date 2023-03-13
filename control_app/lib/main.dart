@@ -139,7 +139,7 @@ class _GestureControlsState extends State<GestureControls> {
       child: Container(
         width: 100.0,
         height: 100.0,
-        color: currentWidth > 600 ? Colors.orange:Colors.teal ;
+        color: currentWidth > 600 ? Colors.orange : Colors.teal,
         child: Text('$currentGesture'),
       ),
       onTap: () => setState(() {
