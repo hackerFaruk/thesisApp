@@ -52,6 +52,7 @@ class _ControlButtonsState extends State<ControlButtons> {
                       maxHeight: 300,
                       maxWidth: 300),
                   width: screenWidth / 10,
+                  padding: const EdgeInsets.all(10),
                   height: screenWidth / 10,
                   child: ElevatedButton(
                       onPressed: () {
@@ -63,14 +64,24 @@ class _ControlButtonsState extends State<ControlButtons> {
                         image: AssetImage('images/rotate.png'),
                       )),
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        toolTip = "Flexing Arm";
-                      });
-                    },
-                    child: const Image(
-                        image: AssetImage('images/rotateBack.png'))),
+                Container(
+                  constraints: const BoxConstraints(
+                      minHeight: 100,
+                      minWidth: 100,
+                      maxHeight: 300,
+                      maxWidth: 300),
+                  width: screenWidth / 10,
+                  height: screenWidth / 10,
+                  padding: const EdgeInsets.all(10),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          toolTip = "Flexing Arm";
+                        });
+                      },
+                      child: const Image(
+                          image: AssetImage('images/rotateBack.png'))),
+                ),
                 const CoolButton(icon: 'images/rotate.png'),
               ],
             ),
