@@ -83,7 +83,7 @@ class _ControlButtonsState extends State<ControlButtons> {
                   print('tapped but no state change');
                 });
               },
-              child: CoolButton(icon: '$baseIcon'),
+              child: CoolButton(icon: baseIcon),
             ),
           ],
         ),
