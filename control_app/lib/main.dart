@@ -65,15 +65,15 @@ class _ControlButtonsState extends State<ControlButtons> {
             ),
             const GestureControls(),
             GestureDetector(
-               onDoubleTap: () {
-                  setState(() {
-                 toolTip = "wrongbutton";
-                 baseIcon = 'images/rotateBack.png';
-                 print('tapped but no state change');
-               });
-               },
-              child:  CoolButton(icon:'$baseIcon'),
-             ),
+              onDoubleTap: () {
+                setState(() {
+                  toolTip = "wrongbutton";
+                  baseIcon = 'images/rotateBack.png';
+                  print('tapped but no state change');
+                });
+              },
+              child: CoolButton(icon: '$baseIcon'),
+            ),
           ],
         ),
       ),
@@ -121,11 +121,15 @@ class _GestureControlsState extends State<GestureControls> {
 
   @override
   Widget build(BuildContext context) {
+    // responsive için ekran boyu alma
+    final currentWidth = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       child: Container(
         width: 100.0,
         height: 100.0,
-        color: Colors.orange,
+        // renk değişii ekrana göre
+        color: currentWidth < 600 ? Colors.amberAccent : Colors.green,
         child: Text('$currentGesture'),
       ),
       onTap: () => setState(() {
