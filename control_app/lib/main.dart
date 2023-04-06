@@ -44,6 +44,8 @@ class _ControlButtonsState extends State<ControlButtons> {
             ), // gesturedetector has a weird use you need behaviour
 
             Row(
+              //buttonsRow
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   //responsive size with constrains
@@ -52,9 +54,9 @@ class _ControlButtonsState extends State<ControlButtons> {
                       minWidth: 100,
                       maxHeight: 300,
                       maxWidth: 300),
-                  width: screenWidth / 10,
+                  width: screenWidth / 5,
                   padding: const EdgeInsets.all(10),
-                  height: screenWidth / 10,
+                  height: screenWidth / 5,
                   child: ElevatedButton(
                       onPressed: () {
                         setState(() {
@@ -71,8 +73,8 @@ class _ControlButtonsState extends State<ControlButtons> {
                       minWidth: 100,
                       maxHeight: 300,
                       maxWidth: 300),
-                  width: screenWidth / 10,
-                  height: screenWidth / 10,
+                  width: screenWidth / 5,
+                  height: screenWidth / 5,
                   padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
                       onPressed: () {
@@ -95,7 +97,7 @@ class _ControlButtonsState extends State<ControlButtons> {
 
                   print('er');
                 },
-                child: Text('PAge')),
+                child: const Text('PAge')),
           ],
         ),
       ),
