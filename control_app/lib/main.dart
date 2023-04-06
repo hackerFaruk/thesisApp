@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dropdown.dart' as drop;
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 
 void main() {
@@ -37,11 +38,11 @@ class _ControlButtonsState extends State<ControlButtons> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            GestureDetector(
-              onTap: () => print('i am a gesture detector'),
-              behavior: HitTestBehavior.translucent,
-              child: Text(' $toolTip'),
-            ), // gesturedetector has a weird use you need behaviour
+            Text(' $toolTip'),
+            const SizedBox(
+              height: 30,
+            ),
+            // gesturedetector has a weird use you need behaviour
 
             Row(
               //buttonsRow
@@ -52,11 +53,11 @@ class _ControlButtonsState extends State<ControlButtons> {
                   constraints: const BoxConstraints(
                       minHeight: 100,
                       minWidth: 100,
-                      maxHeight: 300,
-                      maxWidth: 300),
-                  width: screenWidth / 5,
-                  padding: const EdgeInsets.all(10),
-                  height: screenWidth / 5,
+                      maxHeight: 600,
+                      maxWidth: 600),
+                  width: screenWidth / 4,
+
+                  height: screenWidth / 4,
                   child: ElevatedButton(
                       onPressed: () {
                         setState(() {
@@ -71,11 +72,10 @@ class _ControlButtonsState extends State<ControlButtons> {
                   constraints: const BoxConstraints(
                       minHeight: 100,
                       minWidth: 100,
-                      maxHeight: 300,
-                      maxWidth: 300),
-                  width: screenWidth / 5,
-                  height: screenWidth / 5,
-                  padding: const EdgeInsets.all(10),
+                      maxHeight: 600,
+                      maxWidth: 600),
+                  width: screenWidth / 4,
+                  height: screenWidth / 4,
                   child: ElevatedButton(
                       onPressed: () {
                         setState(() {
@@ -87,17 +87,10 @@ class _ControlButtonsState extends State<ControlButtons> {
                 ),
               ],
             ),
-            const GestureControls(),
-            const CoolButton(icon: 'images/bt.png'),
-            ElevatedButton(
-                onPressed: () {
-                  // change to page bluetoothPage
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => BluetoothPage()));
-
-                  print('er');
-                },
-                child: const Text('PAge')),
+            const SizedBox(
+              height: 20,
+            ),
+            const drop.DropdownButtonExample(),
           ],
         ),
       ),
