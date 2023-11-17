@@ -11,7 +11,9 @@ void main() {
         title: const Text('Personal Trainer Device Control App'),
         backgroundColor: const Color.fromARGB(255, 32, 197, 216),
       ),
-      body: const Center(child: login.login()),
+      body: const Center(
+        child: login.login(),
+      ),
     ),
   ));
 }
