@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'dropdown.dart' as drop;
-import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
-import "loginScreen.dart" as login;
 
-void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 100, 104, 105),
-      appBar: AppBar(
-        title: const Text('Personal Trainer Device Control App'),
-        backgroundColor: const Color.fromARGB(255, 32, 197, 216),
-      ),
-      body: const Center(child: login.login()),
-    ),
-  ));
+import 'dropdown.dart' as drop;
+
+class manuelControl extends StatelessWidget {
+  const manuelControl({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ControlButtons();
+  }
 }
 
 class ControlButtons extends StatefulWidget {
