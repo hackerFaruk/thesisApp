@@ -10,11 +10,87 @@ class login extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome Back!!',
-      home: loginPage(),
+      home: LoginPage(),
     );
   }
 }
 
+class LoginPage extends StatefulWidget {
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login Page'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextField(
+              controller: _usernameController,
+              decoration: const InputDecoration(
+                labelText: 'Username',
+                labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32.0,
+                ),
+              ),
+            ),
+            SizedBox(height: 16.0),
+            TextField(
+              controller: _passwordController,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: 'Password',
+                labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32.0,
+                ),
+              ),
+            ),
+            const SizedBox(height: 32.0),
+            ElevatedButton(
+              onPressed: () {
+                // Handle login action
+                String username = _usernameController.text;
+                String password = _passwordController.text;
+
+                // Implement your login logic here
+                if (username == 'alp' && password == '1234') {
+                  // Navigate to the next screen or perform desired action
+                  print('Login successful!');
+                } else {
+                  // Display an error message or handle authentication failure
+                  print('Login failed. Check your credentials.');
+                }
+              },
+              child: Text('Login'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+/*
 class loginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -80,3 +156,4 @@ class loginPage extends StatelessWidget {
         );
   }
 }
+*/
