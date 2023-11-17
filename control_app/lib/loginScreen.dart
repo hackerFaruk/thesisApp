@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: _passwordController,
               obscureText: true,
@@ -68,6 +68,12 @@ class _LoginPageState extends State<LoginPage> {
                 if (username == 'alp' && password == '1234') {
                   // Navigate to the next screen or perform desired action
                   print('Login successful!');
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const mainpage.mainPage()),
+                  );
                 } else {
                   // Display an error message or handle authentication failure
                   print('Login failed. Check your credentials.');
