@@ -5,8 +5,13 @@ import "loginScreen.dart" as login;
 
 void main() {
   runApp(MaterialApp(
+    theme: ThemeData(
+      textTheme: TextTheme(
+        bodyMedium: const TextStyle(fontSize: 16.0, color: Colors.black),
+      ),
+    ),
     home: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 100, 104, 105),
+      backgroundColor: Color.fromARGB(255, 219, 220, 220),
       appBar: AppBar(
         title: const Text('Personal Trainer Device Control App'),
         backgroundColor: const Color.fromARGB(255, 32, 197, 216),

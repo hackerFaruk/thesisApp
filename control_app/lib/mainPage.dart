@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart' as mainFile;
 
 class mainPage extends StatelessWidget {
   const mainPage({super.key});
@@ -7,8 +8,7 @@ class mainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+    //final ButtonStyle style =   ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
 
     return Container(
         child: Column(
@@ -17,25 +17,32 @@ class mainPage extends StatelessWidget {
           height: screenWidth * 0.4,
         ),
         ElevatedButton(
-          style: style,
+          // style: style,
           onPressed: () {},
           child: const Text('Guided Exercise Mode'),
         ),
         const SizedBox(height: 30),
         ElevatedButton(
-          style: style,
-          onPressed: () {},
+          //style: style,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const mainFile.ControlButtons()),
+            );
+            print("free mode ");
+          },
           child: const Text('Free Movement Mode'),
         ),
         const SizedBox(height: 30),
         ElevatedButton(
-          style: style,
+          // style: style,
           onPressed: () {},
           child: const Text('Exercise Settings'),
         ),
         const SizedBox(height: 30),
         ElevatedButton(
-          style: style,
+          // style: style,
           onPressed: () {},
           child: const Text('System Settings'),
         ),

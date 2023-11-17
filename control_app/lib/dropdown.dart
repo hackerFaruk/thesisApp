@@ -27,10 +27,10 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
           iconEnabledColor: Colors.blueAccent,
           iconDisabledColor: Colors.blueAccent,
           icon: const Icon(Icons.arrow_downward),
-          elevation: 16,
+          elevation: 1,
           style: const TextStyle(color: Colors.black),
           underline: Container(
-            height: 2,
+            height: 3,
             color: Colors.black,
           ),
           onChanged: (String? value) {

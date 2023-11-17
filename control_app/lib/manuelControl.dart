@@ -34,7 +34,19 @@ class _ControlButtonsState extends State<ControlButtons> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Text(' $toolTip'),
+            Text(
+              ' $toolTip',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.blue,
+                letterSpacing: 1.5,
+                decoration: TextDecoration.underline,
+                decorationColor: Color.fromARGB(255, 123, 80, 77),
+                decorationStyle: TextDecorationStyle.double,
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),
