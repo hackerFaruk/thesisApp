@@ -32,7 +32,7 @@ Android Toolchain
 Java Development Kit 
 
 
-You can either visit fkutter.dev for setup your development environment( https://docs.flutter.dev/get-started/install )
+You can either visit fkutter.dev for setup your development environment ( https://docs.flutter.dev/get-started/install )
 
 or 
 
