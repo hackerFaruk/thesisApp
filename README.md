@@ -36,10 +36,20 @@ You can either visit fkutter.dev for setup your development environment( https:/
 
 or 
 
-1- manually install flutter sdk 
+1- manually install flutter sdk   
+
+
 2- run command <flutter doctor>  to check if any requirements are missing 
+
+
 3- Get Java development kit ( JDK) from oracle
+
+
 4- to get android tool chain use  Android Studio > Tools > SDK tools > Android SDK Command-line Tools >Apply to get sdk 
+
+
 5- run <flutter doctor --android-licenses>  this step might require 
+
+
 
 Recomended : Use Android Stuido to setup and device emulator (  this is not a requiremnt for this to work but definetly useful for development or testing )
