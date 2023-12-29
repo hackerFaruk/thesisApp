@@ -5,8 +5,7 @@ Controls motors & observes data of an exoskeleton.
 Exoskeleton is also built as part of my master
 
 Thesis name:
-#  Development of Body Position and Muscle State Analyzing Personal Trainer Device with
-Mobile App Support
+#  Development of Body Position and Muscle State Analyzing Personal Trainer Device with Mobile App Support
 
 Thesis Ref no ( Turkey) : 10604256
 
