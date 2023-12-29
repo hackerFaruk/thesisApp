@@ -25,6 +25,8 @@ Visuals -> you can find technical drawings of parts and also pictures of end pro
 Embeded -> you can find files reqarding embeded files   
 
 
+Electronics -> you can find electronics for embeded system in here 
+
 # Requirements  For  Flutter App 
 
 Flutter SDK
