@@ -1,0 +1,1 @@
+BluetoothSerial ve ESP32Servo Kütüphaneleri kullanılarak, Arduino IDE 1.8.16 üzerinde derlenmiştir.
