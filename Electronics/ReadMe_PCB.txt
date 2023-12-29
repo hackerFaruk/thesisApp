@@ -1,0 +1,1 @@
+PCB ve şematik çizimi Eagle 9.6.2 üzerinde yapılmıştır.
