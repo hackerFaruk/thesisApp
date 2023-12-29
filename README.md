@@ -22,7 +22,7 @@ Step Files ->  you can step files for either prodcution or editting  parts used 
 Visuals -> you can find technical drawings of parts and also pictures of end product  
 
  
-Embeded -> you can find files reqarding embeded files   
+Embeded -> you can find files regarding embeded files   
 
 
 Electronics -> you can find electronics for embeded system in here 
