@@ -11,7 +11,15 @@ Thesis Ref no ( Turkey) : 10604256
 
 my orcid 0000-0001-7512-0224
 
-# Requirements : 
+# Folder Structure : 
+
+control_app -> file you can find mobile app made with flutter 
+Step Files ->  you can step files for either prodcution or editting  parts used in thesis
+Visuals -> you can find technical drawings of parts and also pictures of end product 
+Embeded -> you can find files reqarding embeded files 
+
+
+# Requirements  For  Flutter App : 
 
 Flutter SDK
 Android Toolchain
