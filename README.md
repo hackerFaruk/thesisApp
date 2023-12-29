@@ -22,8 +22,10 @@ Step Files ->  you can step files for either prodcution or editting  parts used 
 Visuals -> you can find technical drawings of parts and also pictures of end product  
 
  
-Embeded -> you can find files reqarding embeded files   
+Embeded -> you can find files regarding embeded files   
 
+
+Electronics -> you can find electronics for embeded system in here 
 
 # Requirements  For  Flutter App 
 
@@ -53,3 +55,19 @@ or
 
 
 Recomended : Use Android Stuido to setup and device emulator (  this is not a requiremnt for this to work but definetly useful for development or testing )
+
+
+
+
+# Versions List 
+
+sdk: '>=2.19.4 <3.0.0' 
+
+
+cupertino_icons: ^1.0.2
+
+   
+flutter_bluetooth_serial: ^0.4.0
+
+  
+flutter_lints: ^2.0.0
